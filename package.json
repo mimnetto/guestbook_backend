@@ -1,7 +1,7 @@
 {
   "name": "guestbook_api",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Description",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -23,5 +23,14 @@
   },
   "devDependencies": {
     "http-proxy-middleware": "^1.0.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mimnetto/guestbook_backend.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/mimnetto/guestbook_backend/issues"
+  },
+  "homepage": "https://github.com/mimnetto/guestbook_backend#readme"
 }

@@ -1,9 +1,8 @@
 // DEPENDENCIES
-
-// Allow Cross-Origin-Requests
-const cors = require('cors')
 // Server
 const express = require('express')
+// Allow Cross-Origin-Requests
+const cors = require('cors')
 // MongoDB ORM
 const mongoose = require('mongoose')
 
@@ -46,6 +45,7 @@ app.use('/guests', guestsController)
 app.get('/*', (req, res) => {
   res.redirect('/guests')
 })
+
 
 // LISTEN
 app.listen(PORT, () => console.log( '🥂👰🤵🥂 Wedding bells on', PORT));

@@ -1,10 +1,11 @@
 const express = require('express')
+const cors = require('cors')
 // TODO: rename express Router to your resource
 const guests = express.Router()
 // TODO: rename your Model to your resource
 // TODO: make sure you are requiring the correct file
 const Guest = require('../models/guest.js')
-// const guestSeed = require("../models/seed.js");
+const guestSeed = require("../models/seed.js");
 
 // TODO: rename each router to your resource for each route and rename each model for all 5 routes
 
@@ -37,7 +38,7 @@ guests.get('/', (req, res) => {
 guests.put('/:id', (req, res) => {
   // TODO: Update Guest to your resource
   Guest.findByIdAndUpdate(
-    req.params._id,
+    req.params.id,
     req.body,
     { new: true },
     (err, updatedGuest) => {
@@ -50,14 +51,12 @@ guests.put('/:id', (req, res) => {
 })
 
 // DELETE
-// TODO: rename router to your resource
 guests.delete('/:id', (req, res) => {
-  // TODO: Update Contact to your resource
-  Guest.findByIdAndRemove(req.params._id, (error, deletedGuest) => {
+  Guest.findByIdAndRemove(req.params.id, (error, deletedGuest) => {
     if (error) {
       res.status(400).json({ error: error })
     }
-    res.status(200).json(deletedGuest)
+    res.status(200).json({deletedGuest, params: req.params})
   })
 })
 
