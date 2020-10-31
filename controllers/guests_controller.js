@@ -4,6 +4,7 @@ const guests = express.Router()
 // TODO: rename your Model to your resource
 // TODO: make sure you are requiring the correct file
 const Guest = require('../models/guest.js')
+// const guestSeed = require("../models/seed.js");
 
 // TODO: rename each router to your resource for each route and rename each model for all 5 routes
 
@@ -36,7 +37,7 @@ guests.get('/', (req, res) => {
 guests.put('/:id', (req, res) => {
   // TODO: Update Guest to your resource
   Guest.findByIdAndUpdate(
-    req.params.id,
+    req.params._id,
     req.body,
     { new: true },
     (err, updatedGuest) => {
@@ -52,7 +53,7 @@ guests.put('/:id', (req, res) => {
 // TODO: rename router to your resource
 guests.delete('/:id', (req, res) => {
   // TODO: Update Contact to your resource
-  Guest.findByIdAndRemove(req.params.id, (error, deletedGuest) => {
+  Guest.findByIdAndRemove(req.params._id, (error, deletedGuest) => {
     if (error) {
       res.status(400).json({ error: error })
     }
@@ -65,5 +66,10 @@ guests.delete('/:id', (req, res) => {
 guests.get('/*', (req, res) => {
   res.status(404).json({ error: 'page not found' })
 })
+
+// Guest.create(guestSeed, (err, data) => {
+//   if (err) console.log(err.message)
+//   console.log('added provided guest data')
+// })
 
 module.exports = guests

@@ -13,6 +13,7 @@ const app = express()
 const PORT = process.env.PORT
 const MONGODB_URI = process.env.MONGODB_URI
 
+
 // MIDDLEWARE
 app.use(express.json()) // use .json(), not .urlencoded()
 app.use(cors())
@@ -47,6 +48,4 @@ app.get('/*', (req, res) => {
 })
 
 // LISTEN
-app.listen(PORT, () => {
-  console.log('🎉🎊', 'Up and running on', PORT, '🎉🎊')
-})
+app.listen(PORT, () => console.log( '🥂👰🤵🥂 Wedding bells on', PORT));
