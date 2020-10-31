@@ -37,7 +37,7 @@ guests.get('/', (req, res) => {
 guests.put('/:id', (req, res) => {
   // TODO: Update Guest to your resource
   Guest.findByIdAndUpdate(
-    req.params.id,
+    req.params._id,
     req.body,
     { new: true },
     (err, updatedGuest) => {
@@ -53,7 +53,7 @@ guests.put('/:id', (req, res) => {
 // TODO: rename router to your resource
 guests.delete('/:id', (req, res) => {
   // TODO: Update Contact to your resource
-  Guest.findByIdAndRemove(req.params.id, (error, deletedGuest) => {
+  Guest.findByIdAndRemove(req.params._id, (error, deletedGuest) => {
     if (error) {
       res.status(400).json({ error: error })
     }
