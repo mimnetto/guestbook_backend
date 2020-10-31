@@ -34,7 +34,7 @@ guests.get('/', (req, res) => {
 
 // UPDATE
 // TODO: rename router to your resource
-guests.put('/:id', (req, res) => {
+guests.put('/:_id', (req, res) => {
   // TODO: Update Guest to your resource
   Guest.findByIdAndUpdate(
     req.params._id,
