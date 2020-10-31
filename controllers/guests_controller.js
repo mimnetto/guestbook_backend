@@ -63,9 +63,9 @@ guests.delete('/:id', (req, res) => {
 
 // Handle 404
 // TODO: rename router to your resource
-// guests.get('/*', (req, res) => {
-//   res.status(404).json({ error: 'page not found' })
-// })
+guests.get('/*', (req, res) => {
+  res.status(404).json({ error: 'page not found' })
+})
 
 // Guest.create(guestSeed, (err, data) => {
 //   if (err) console.log(err.message)
