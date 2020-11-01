@@ -1,9 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-// TODO: rename express Router to your resource
 const guests = express.Router()
-// TODO: rename your Model to your resource
-// TODO: make sure you are requiring the correct file
 const Guest = require('../models/guest.js')
 const guestSeed = require("../models/seed.js");
 
@@ -18,9 +15,7 @@ guests.post('/', (req, res) => {
 })
 
 // READ
-// TODO: rename router to your resource
 guests.get('/', (req, res) => {
-  // TODO: Update Contact to your resource
   Guest.find({}, (error, foundGuests) => {
     if (error) {
       res.status(400).json({ error: error })
@@ -30,11 +25,9 @@ guests.get('/', (req, res) => {
 })
 
 // UPDATE
-// TODO: rename router to your resource
 guests.put('/:id', (req, res) => {
-  // TODO: Update Guest to your resource
   Guest.findByIdAndUpdate(
-    req.params._id,
+    req.params.id,
     req.body,
     { new: true },
     (err, updatedGuest) => {
@@ -48,12 +41,7 @@ guests.put('/:id', (req, res) => {
 
 // DELETE
 guests.delete('/:id', (req, res) => {
-<<<<<<< HEAD
   Guest.findByIdAndRemove(req.params.id, (error, deletedGuest) => {
-=======
-  // TODO: Update Contact to your resource
-  Guest.findByIdAndRemove(req.params._id, (error, deletedGuest) => {
->>>>>>> e9185238a60717fb4c2feffb517655f7cace53ae
     if (error) {
       res.status(400).json({ error: error })
     }
@@ -62,7 +50,6 @@ guests.delete('/:id', (req, res) => {
 })
 
 // Handle 404
-// TODO: rename router to your resource
 guests.get('/*', (req, res) => {
   res.status(404).json({ error: 'page not found' })
 })
