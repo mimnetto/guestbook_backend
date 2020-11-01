@@ -2,7 +2,7 @@ module.exports = [{
   name:  'Mimi',
   from:  'Weymouth, MA',
   memory: 'The day they bought home Elly.',
-  wish: 'They always have good neighbors.',
+  wish: 'I wish that they always have good neighbors.',
   side: 'Both'
 },
 {
