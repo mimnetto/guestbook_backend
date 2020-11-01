@@ -31,13 +31,10 @@ mongoose.connect(
   }
 )
 
-// Optional, but likely helpful
 // Connection Error/Success
-// Define callback functions for various events
 mongoose.connection.on('error', err => console.log(err.message + ' is mongod not running?'))
 mongoose.connection.on('disconnected', () => console.log('mongo disconnected'))
 
-// TODO: Update controllers/routes to your resources
 // CONTROLLERS/ROUTES
 const guestsController = require('./controllers/guests_controller.js')
 app.use('/guests', guestsController)
@@ -46,11 +43,5 @@ app.get('/*', (req, res) => {
   res.redirect('/guests')
 })
 
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> e9185238a60717fb4c2feffb517655f7cace53ae
 // LISTEN
 app.listen(PORT, () => console.log( '🥂👰🤵🥂 Wedding bells on', PORT));
